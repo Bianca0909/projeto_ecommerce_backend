@@ -1,17 +1,31 @@
-Projeto RedShifty: E-commerce de eletrônicos
+🇧🇷 Projeto RedShifty: E-commerce de eletrônicos
 
-Explicando a estrutura do projeto:
-Esse projeto consiste na construção de um site para e-commerce de eletrônicos baseado no padrão de projeto MVC (Model-View-Controller).
+    Explicando a estrutura do projeto:
+    Esse projeto consiste na construção de um site para e-commerce de eletrônicos baseado no padrão de projeto MVC (Model-View-Controller).
 
-Para saber mais do padrão MVC:
-https://www.youtube.com/watch?v=mMDt9g7bMjk
-https://www.devmedia.com.br/introducao-ao-padrao-mvc/29308
+    Para saber mais do padrão MVC:
+    https://www.youtube.com/watch?v=mMDt9g7bMjk
+    https://www.devmedia.com.br/introducao-ao-padrao-mvc/29308
 
-Sobre as camadas do projeto:
+    Tecnologias utilizadas:
 
-    Model: Camada onde são determinadas as entidades;
-    Controller: Controlador o qual relaciona-se com a camada view (responsável pela renderização de páginas) e entre as regras de negócio da aplicação;
-    Repository: Responsável pelas operações diretas com o banco de dados;
-    Service: Aplicação das regras de negócio;
-    Config: Camada de configurações necessárias da aplicação;
-    Enums: Classes com enumerações;
+    - Spring boot: https://spring.io/projects/spring-boot
+    - Maven Apache: https://maven.apache.org/
+    - Lombok: https://www.baeldung.com/intro-to-project-lombok | https://projectlombok.org/download
+    - MySQL (database): https://www.mysql.com/
+ 
+🇺🇸 RedShifty Project: Tech's e-commerce
+    
+    About the project structure:
+        This project consists on build a website for technology e-commerce based on MVC (Model-View-Controller) pattern.
+        
+     More about MVC pattern:
+     https://dotnet.microsoft.com/en-us/apps/aspnet/mvc
+     
+     
+    Tecnologys used on this project:
+   
+    - Spring boot: https://spring.io/projects/spring-boot
+    - Maven Apache: https://maven.apache.org/
+    - Lombok: https://www.baeldung.com/intro-to-project-lombok | https://projectlombok.org/download
+    - MySQL (database): https://www.mysql.com/
