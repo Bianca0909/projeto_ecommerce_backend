@@ -13,6 +13,8 @@
     - Maven Apache: https://maven.apache.org/
     - Lombok: https://www.baeldung.com/intro-to-project-lombok | https://projectlombok.org/download
     - MySQL (database): https://www.mysql.com/
+    - Angular: https://angular.io/
+    - Typescript: https://www.typescriptlang.org/
  
 🇺🇸 RedShifty Project: Tech's e-commerce
     
@@ -25,7 +27,9 @@
      
     Tecnologys used on this project:
    
-    - Spring boot: https://spring.io/projects/spring-boot
+   - Spring boot: https://spring.io/projects/spring-boot
     - Maven Apache: https://maven.apache.org/
     - Lombok: https://www.baeldung.com/intro-to-project-lombok | https://projectlombok.org/download
     - MySQL (database): https://www.mysql.com/
+    - Angular: https://angular.io/
+    - Typescript: https://www.typescriptlang.org/
