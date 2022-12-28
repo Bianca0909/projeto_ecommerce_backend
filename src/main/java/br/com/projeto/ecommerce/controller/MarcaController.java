@@ -34,8 +34,8 @@ public class MarcaController {
 	}
 	
 	@GetMapping("/find-by-name/{name}")
-	public List<MarcaModel> readAll(@PathVariable("name") String name) {
-		return marcaService.readAll();
+	public List<MarcaModel> findByName(@PathVariable("name") String name) {
+		return marcaService.findByName(name);
 	}
 
 	@DeleteMapping("/{id}")

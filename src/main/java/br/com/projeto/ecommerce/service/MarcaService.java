@@ -22,7 +22,7 @@ public class MarcaService {
 		return marcaRepository.findAll();
 	}
 	
-	public List<MarcaModel> readByName(String name) {
+	public List<MarcaModel> findByName(String name) {
 		return marcaRepository.findByName(name);
 	}
 	
