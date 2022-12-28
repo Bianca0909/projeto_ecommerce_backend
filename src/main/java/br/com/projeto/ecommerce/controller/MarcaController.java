@@ -32,6 +32,11 @@ public class MarcaController {
 	public List<MarcaModel> readAll() {
 		return marcaService.readAll();
 	}
+	
+	@GetMapping("/find-by-name/{name}")
+	public List<MarcaModel> readAll(@PathVariable("name") String name) {
+		return marcaService.readAll();
+	}
 
 	@DeleteMapping("/{id}")
 	public MarcaModel delete(@PathVariable("id") Integer id) {

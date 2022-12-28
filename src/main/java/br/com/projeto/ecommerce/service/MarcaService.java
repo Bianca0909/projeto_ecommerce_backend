@@ -22,6 +22,10 @@ public class MarcaService {
 		return marcaRepository.findAll();
 	}
 	
+	public List<MarcaModel> readByName(String name) {
+		return marcaRepository.findByName(name);
+	}
+	
 	public MarcaModel delete(Integer id) {
 		MarcaModel marca = marcaRepository.findById(id).get();
 		marcaRepository.delete(marca);
