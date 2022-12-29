@@ -13,39 +13,38 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.projeto.ecommerce.model.MarcaModel;
-import br.com.projeto.ecommerce.service.MarcaService;
+import br.com.projeto.ecommerce.model.CategoriaModel;
+import br.com.projeto.ecommerce.service.CategoriaService;
 
 @RestController
-@RequestMapping("/marca")
-public class MarcaController {
+@RequestMapping("/categoria")
+public class CategoriaController {
 
 	@Autowired
-	MarcaService marcaService;
-
+	CategoriaService categoriaService;
+	
 	@PostMapping
-	public MarcaModel create(@RequestBody MarcaModel marca) {
-		return marcaService.create(marca);
+	public CategoriaModel create(@RequestBody CategoriaModel categoria) {
+		return categoriaService.create(categoria);
 	}
-
+	
 	@GetMapping
-	public List<MarcaModel> readAll() {
-		return marcaService.readAll();
+	public List<CategoriaModel> readAll() {
+		return categoriaService.readAll();
 	}
 	
 	@GetMapping("/find-by-name/{name}")
-	public List<MarcaModel> findByName(@PathVariable("name") String name) {
-		return marcaService.findByName(name);
+	public List<CategoriaModel> findByName(@PathVariable("name") String name) {
+		return categoriaService.findByName(name);
 	}
-
+	
 	@DeleteMapping
-	public MarcaModel delete(@PathVariable("id") Integer id) {
-		return marcaService.delete(id);
+	public CategoriaModel delete(@RequestParam("id")Integer id) {
+		return categoriaService.delete(id);
 	}
-
+	
 	@PutMapping
-	public MarcaModel update(@RequestBody MarcaModel marca, @RequestParam("id") Integer id) {
-		marca.setId(id);
-		return marcaService.update(marca);
+	public CategoriaModel update(@RequestBody CategoriaModel categoria, @RequestParam("id") Integer id) {
+		return categoriaService.update(categoria);
 	}
 }
