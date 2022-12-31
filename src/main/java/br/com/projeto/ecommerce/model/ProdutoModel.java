@@ -26,50 +26,50 @@ public class ProdutoModel implements Serializable {
 	@Column
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	Integer id;
+	private Integer id;
 	
 	@Column
 	@NotNull(message = "O campo nome não pode ser nulo")
-	String nome;
+	private String nome;
 	
 	@Column
 	@NotNull(message = "O campo nome não pode ser nulo")
-	String descricao;
+	private String descricao;
 	
 	@Column
 	@NotNull(message = "O campo nome não pode ser nulo")
-	BigDecimal preco;
+	private BigDecimal preco;
 	
 	@Column
-	Integer quantidade;
-	
-	@Column
-	@NotNull(message = "O campo nome não pode ser nulo")
-	MarcaModel marca;
+	private Integer quantidade;
 	
 	@Column
 	@NotNull(message = "O campo nome não pode ser nulo")
-	CategoriaModel categoria;
+	private MarcaModel marca;
 	
 	@Column
-	Boolean produtoVitrine;
+	@NotNull(message = "O campo nome não pode ser nulo")
+	private CategoriaModel categoria;
 	
 	@Column
-	Boolean produtoPromocao;
+	private Boolean produtoVitrine;
 	
 	@Column
-	BigDecimal precoPromocional;
+	private Boolean produtoPromocao;
 	
 	@Column
-	Double desconto;
+	private BigDecimal precoPromocional;
 	
 	@Column
-	LocalDate dataInicialPromocao;
+	private Double desconto;
 	
 	@Column
-	LocalDate dataFinalPromocao;
+	private LocalDate dataInicialPromocao;
 	
 	@Column
-	byte[] imagem;
+	private LocalDate dataFinalPromocao;
+	
+	@Column
+	private byte[] imagem;
 
 }

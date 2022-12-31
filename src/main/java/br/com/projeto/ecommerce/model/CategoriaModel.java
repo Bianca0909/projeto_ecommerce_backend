@@ -2,16 +2,19 @@ package br.com.projeto.ecommerce.model;
 
 import java.io.Serializable;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
+
+import javax.validation.constraints.NotNull;
+
+
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
 
 @Entity
 @Table(name = "categoria")
@@ -26,6 +29,6 @@ public class CategoriaModel implements Serializable{
 	private Integer id;
 	
 	@Column
-	@NonNull
+	@NotNull
 	private String name;
 }

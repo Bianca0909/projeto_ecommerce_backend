@@ -14,8 +14,9 @@ public class CategoriaService {
 	@Autowired
 	private CategoriaRepository categoriaRepository;
 	
-	public CategoriaModel create(CategoriaModel categoria) {
-		return categoriaRepository.save(categoria);
+	public String create(CategoriaModel categoria) {
+		 categoriaRepository.save(categoria);
+		 return "Categoria cadastrada com sucesso";
 	}
 	
 	public List<CategoriaModel> readAll() {
@@ -26,13 +27,14 @@ public class CategoriaService {
 		return categoriaRepository.findByName(name);
 	}
 	
-	public CategoriaModel delete(Integer id) {
+	public String delete(Integer id) {
 		CategoriaModel categoria = categoriaRepository.findById(id).get();
 		categoriaRepository.delete(categoria);
-		return categoria;
+		return "Categoria excluída com sucesso";
 	}
 	
-	public CategoriaModel update(CategoriaModel categoria) {
-		return categoriaRepository.save(categoria);
+	public String update(CategoriaModel categoria) {
+		 categoriaRepository.save(categoria);
+		 return "Categoria atualizada com sucesso";
 	}
 }

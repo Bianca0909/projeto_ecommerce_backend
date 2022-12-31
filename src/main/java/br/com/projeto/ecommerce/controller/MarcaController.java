@@ -16,15 +16,15 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.projeto.ecommerce.model.MarcaModel;
 import br.com.projeto.ecommerce.service.MarcaService;
 
-@RestController
 @RequestMapping("/marca")
+@RestController
 public class MarcaController {
 
 	@Autowired
 	MarcaService marcaService;
 
 	@PostMapping
-	public MarcaModel create(@RequestBody MarcaModel marca) {
+	public String create(@RequestBody MarcaModel marca) {
 		return marcaService.create(marca);
 	}
 
@@ -38,13 +38,13 @@ public class MarcaController {
 		return marcaService.findByName(name);
 	}
 
-	@DeleteMapping
-	public MarcaModel delete(@PathVariable("id") Integer id) {
+	@DeleteMapping("/{id}")
+	public String delete(@PathVariable Integer id) {
 		return marcaService.delete(id);
 	}
 
-	@PutMapping
-	public MarcaModel update(@RequestBody MarcaModel marca, @RequestParam("id") Integer id) {
+	@PutMapping("/{id}")
+	public String update(@RequestBody MarcaModel marca, @PathVariable Integer id) {
 		marca.setId(id);
 		return marcaService.update(marca);
 	}

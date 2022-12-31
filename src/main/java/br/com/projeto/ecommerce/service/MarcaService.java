@@ -14,8 +14,9 @@ public class MarcaService {
 	@Autowired
 	private MarcaRepository marcaRepository;
 	
-	public MarcaModel create(MarcaModel marca) {
-		return marcaRepository.save(marca);
+	public String create(MarcaModel marca) {
+		 marcaRepository.save(marca);
+		 return "Marca cadastrada com sucesso";
 	}
 	
 	public List<MarcaModel> readAll() {
@@ -26,14 +27,15 @@ public class MarcaService {
 		return marcaRepository.findByName(name);
 	}
 	
-	public MarcaModel delete(Integer id) {
+	public String delete(Integer id) {
 		MarcaModel marca = marcaRepository.findById(id).get();
 		marcaRepository.delete(marca);
-		return marca;
+		return "Marca excluída com sucesso";
 	}
 	
-	public MarcaModel update(MarcaModel marca) {
-		return marcaRepository.save(marca);
+	public String update(MarcaModel marca) {
+		 marcaRepository.save(marca);
+		 return "Marca atualizada com sucesso";
 	}
 	
 }

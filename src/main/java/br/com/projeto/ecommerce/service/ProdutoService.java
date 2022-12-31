@@ -14,8 +14,9 @@ public class ProdutoService {
 	@Autowired
 	private ProdutoRepository produtoRepository;
 	
-	public ProdutoModel create(ProdutoModel produto) {
-		return produtoRepository.save(produto);
+	public String create(ProdutoModel produto) {
+		 produtoRepository.save(produto);
+		 return "Produto cadastrado com sucesso";
 	}
 	
 	public List<ProdutoModel> readAll() {
@@ -26,13 +27,18 @@ public class ProdutoService {
 		return produtoRepository.findByNome(nome);
 	}
 	
+	public List<ProdutoModel> findByCaracter(String caracter) {
+		return produtoRepository.findByCaracter(caracter);
+	}
+	
 	public String delete(Integer id) {
 		ProdutoModel produto = produtoRepository.findById(id).get();
 		produtoRepository.delete(produto);
 		return "Produto excluído com sucesso";
 	}
 	
-	public ProdutoModel update(ProdutoModel produto) {
-		return produtoRepository.save(produto);
+	public String update(ProdutoModel produto) {
+		 produtoRepository.save(produto);
+		 return "Produto atualizado com sucesso";
 	}
 }

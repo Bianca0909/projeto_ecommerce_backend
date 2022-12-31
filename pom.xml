@@ -38,13 +38,6 @@
     	<artifactId>spring-boot-devtools</artifactId>
     	<version>3.0.1</version>
 	</dependency>
-	
-	<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-rest -->
-	<dependency>
-    	<groupId>org.springframework.boot</groupId>
-    	<artifactId>spring-boot-starter-data-rest</artifactId>
-    	<version>3.0.1</version>
-	</dependency>
 
 	<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 	<dependency>
@@ -81,6 +74,42 @@
     	<artifactId>validation-api</artifactId>
     	<version>2.0.1.Final</version>
 	</dependency>
+
+	<!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger2 -->
+	<dependency>
+    	<groupId>io.springfox</groupId>
+    	<artifactId>springfox-swagger2</artifactId>
+    	<version>3.0.0</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui -->
+	<dependency>
+	    <groupId>io.springfox</groupId>
+	    <artifactId>springfox-swagger-ui</artifactId>
+	    <version>3.0.0</version>
+	</dependency>
+
+	<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
+	<dependency>
+	    <groupId>org.springframework.boot</groupId>
+	    <artifactId>spring-boot-starter-web</artifactId>
+	    <version>3.0.1</version>
+	</dependency>
+	
+		<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+	<dependency>
+	    <groupId>javax.servlet</groupId>
+	    <artifactId>javax.servlet-api</artifactId>
+	    <version>4.0.1</version>
+	    <scope>provided</scope>
+	</dependency>
+	
+	<dependency>
+    	<groupId>org.springframework.boot</groupId>
+    	<artifactId>spring-boot-starter-thymeleaf</artifactId>
+	</dependency>
+
+
 
 	</dependencies>
 

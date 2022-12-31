@@ -11,4 +11,7 @@ import br.com.projeto.ecommerce.model.CategoriaModel;
 public interface CategoriaRepository extends JpaRepository<CategoriaModel, Integer>{
 
 	public List<CategoriaModel> findByName(String name);
+	
+	
+	
 }

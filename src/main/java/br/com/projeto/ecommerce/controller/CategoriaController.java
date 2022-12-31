@@ -10,21 +10,21 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.projeto.ecommerce.model.CategoriaModel;
 import br.com.projeto.ecommerce.service.CategoriaService;
 
-@RestController
 @RequestMapping("/categoria")
+@RestController
+
 public class CategoriaController {
 
 	@Autowired
 	CategoriaService categoriaService;
 	
 	@PostMapping
-	public CategoriaModel create(@RequestBody CategoriaModel categoria) {
+	public String create(@RequestBody CategoriaModel categoria) {
 		return categoriaService.create(categoria);
 	}
 	
@@ -38,13 +38,14 @@ public class CategoriaController {
 		return categoriaService.findByName(name);
 	}
 	
-	@DeleteMapping
-	public CategoriaModel delete(@RequestParam("id")Integer id) {
+	@DeleteMapping("/{id}")
+	public String delete(@PathVariable Integer id) {
 		return categoriaService.delete(id);
 	}
 	
-	@PutMapping
-	public CategoriaModel update(@RequestBody CategoriaModel categoria, @RequestParam("id") Integer id) {
+	@PutMapping("/{id}")
+	public String update(@RequestBody CategoriaModel categoria, @PathVariable Integer id) {
+		categoria.setId(id);
 		return categoriaService.update(categoria);
 	}
 }

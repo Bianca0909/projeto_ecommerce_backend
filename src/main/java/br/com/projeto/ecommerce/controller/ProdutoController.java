@@ -10,22 +10,20 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.projeto.ecommerce.model.MarcaModel;
 import br.com.projeto.ecommerce.model.ProdutoModel;
 import br.com.projeto.ecommerce.service.ProdutoService;
 
-@RestController
 @RequestMapping("/produto")
+@RestController
 public class ProdutoController {
 
 	@Autowired
 	ProdutoService produtoService;
 	
 	@PostMapping
-	public ProdutoModel create(@RequestBody ProdutoModel produto) {
+	public String create(@RequestBody ProdutoModel produto) {
 		return produtoService.create(produto);
 	}
 	
@@ -34,18 +32,23 @@ public class ProdutoController {
 		return produtoService.readAll();
 	}
 	
-	@GetMapping("/find-by-name/{name}")
-	public List<ProdutoModel> findByNome(@PathVariable("name") String nome) {
+	@GetMapping("/find-by-name/{nome}")
+	public List<ProdutoModel> findByNome(@PathVariable String nome) {
 		return produtoService.findByNome(nome);
 	}
+	
+	@GetMapping("/find-by-caracter/{caracter}")
+	public List<ProdutoModel> findByCaracter(@PathVariable String caracter) {
+		return produtoService.findByCaracter(caracter);
+	}
 
-	@DeleteMapping
-	public String delete(@PathVariable("id") Integer id) {
+	@DeleteMapping("/{id}")
+	public String delete(@PathVariable Integer id) {
 		return produtoService.delete(id);
 	}
 
-	@PutMapping
-	public ProdutoModel update(@RequestBody ProdutoModel produto, @RequestParam("id") Integer id) {
+	@PutMapping("/{id}")
+	public String update(@RequestBody ProdutoModel produto, @PathVariable Integer id) {
 		produto.setId(id);
 		return produtoService.update(produto);
 	}
