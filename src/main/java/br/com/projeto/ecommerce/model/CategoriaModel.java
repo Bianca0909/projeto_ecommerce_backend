@@ -1,13 +1,14 @@
 package br.com.projeto.ecommerce.model;
 
 import java.io.Serializable;
-
+import java.util.List;
 
 import javax.validation.constraints.NotNull;
 
 
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -31,4 +32,5 @@ public class CategoriaModel implements Serializable{
 	@Column
 	@NotNull
 	private String name;
+
 }

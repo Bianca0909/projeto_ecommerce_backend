@@ -17,7 +17,6 @@ import br.com.projeto.ecommerce.service.CategoriaService;
 
 @RequestMapping("/categoria")
 @RestController
-
 public class CategoriaController {
 
 	@Autowired

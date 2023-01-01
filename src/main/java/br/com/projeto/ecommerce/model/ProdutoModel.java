@@ -8,9 +8,12 @@ import javax.validation.constraints.NotNull;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -23,8 +26,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class ProdutoModel implements Serializable {
 	
-	@Column
 	@Id
+	@Column
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
@@ -33,23 +36,25 @@ public class ProdutoModel implements Serializable {
 	private String nome;
 	
 	@Column
-	@NotNull(message = "O campo nome não pode ser nulo")
+	@NotNull(message = "O campo descrição não pode ser nulo")
 	private String descricao;
 	
 	@Column
-	@NotNull(message = "O campo nome não pode ser nulo")
+	@NotNull(message = "O campo preço não pode ser nulo")
 	private BigDecimal preco;
+
+	@JoinColumn(name = "marca", referencedColumnName = "id")
+	@NotNull(message = "O campo marca não pode ser nulo")
+	@ManyToOne
+	private MarcaModel marca;
+
+	@JoinColumn(name = "categoria", referencedColumnName = "id")
+	@NotNull(message = "O campo categoria não pode ser nulo")
+	@ManyToOne
+	private CategoriaModel categoria;
 	
 	@Column
 	private Integer quantidade;
-	
-	@Column
-	@NotNull(message = "O campo nome não pode ser nulo")
-	private MarcaModel marca;
-	
-	@Column
-	@NotNull(message = "O campo nome não pode ser nulo")
-	private CategoriaModel categoria;
 	
 	@Column
 	private Boolean produtoVitrine;
