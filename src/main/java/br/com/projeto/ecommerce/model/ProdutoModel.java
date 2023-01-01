@@ -8,7 +8,6 @@ import javax.validation.constraints.NotNull;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -75,6 +74,6 @@ public class ProdutoModel implements Serializable {
 	private LocalDate dataFinalPromocao;
 	
 	@Column
-	private byte[] imagem;
+	private String imagem;
 
 }
