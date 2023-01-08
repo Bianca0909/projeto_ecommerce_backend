@@ -75,5 +75,8 @@ public class ProdutoModel implements Serializable {
 	
 	@Column
 	private String imagem;
+	
+	@Column
+	private Boolean favorito;
 
 }

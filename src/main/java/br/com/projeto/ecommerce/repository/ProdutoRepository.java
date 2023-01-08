@@ -16,4 +16,7 @@ public interface ProdutoRepository extends JpaRepository<ProdutoModel, Integer> 
 	// Dynamic query from JPA
 	@Query(value = "SELECT * FROM produto WHERE nome LIKE %?%", nativeQuery = true)
 	public List<ProdutoModel> findByCaracter(String caracter);
+	
+	@Query(value = "SELECT * FROM produto WHERE favorito = 1;", nativeQuery = true)
+	public List<ProdutoModel> findByFavorito();
 }

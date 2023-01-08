@@ -31,6 +31,10 @@ public class ProdutoService {
 		return produtoRepository.findByCaracter(caracter);
 	}
 	
+	public List<ProdutoModel> findByFavorito() {
+		return produtoRepository.findByFavorito();
+	}
+	
 	public String delete(Integer id) {
 		ProdutoModel produto = produtoRepository.findById(id).get();
 		produtoRepository.delete(produto);

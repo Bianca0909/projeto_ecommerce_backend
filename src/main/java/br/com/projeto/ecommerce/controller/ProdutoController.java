@@ -42,6 +42,11 @@ public class ProdutoController {
 		return produtoService.findByCaracter(caracter);
 	}
 
+	@GetMapping("/find-by-favorite")
+	public List<ProdutoModel> findByFavorito() {
+		return produtoService.findByFavorito();
+	}
+	
 	@DeleteMapping("/{id}")
 	public String delete(@PathVariable Integer id) {
 		return produtoService.delete(id);
