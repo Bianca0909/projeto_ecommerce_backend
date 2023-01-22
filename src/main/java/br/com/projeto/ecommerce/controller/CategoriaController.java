@@ -1,6 +1,7 @@
 package br.com.projeto.ecommerce.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -35,6 +36,11 @@ public class CategoriaController {
 	@GetMapping("/find-by-name/{name}")
 	public List<CategoriaModel> findByName(@PathVariable("name") String name) {
 		return categoriaService.findByName(name);
+	}
+	
+	@GetMapping("{id}")
+	public Optional<CategoriaModel> findById(@PathVariable Integer id) {
+		return categoriaService.findById(id);
 	}
 	
 	@DeleteMapping("/{id}")

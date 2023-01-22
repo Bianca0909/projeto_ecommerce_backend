@@ -1,10 +1,9 @@
 package br.com.projeto.ecommerce.service;
 
 import java.util.List;
-
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import br.com.projeto.ecommerce.model.MarcaModel;
 import br.com.projeto.ecommerce.repository.MarcaRepository;
 
@@ -25,6 +24,10 @@ public class MarcaService {
 	
 	public List<MarcaModel> findByName(String name) {
 		return marcaRepository.findByName(name);
+	}
+	
+	public Optional<MarcaModel> findById(Integer id) {
+		return marcaRepository.findById(id);
 	}
 	
 	public String delete(Integer id) {

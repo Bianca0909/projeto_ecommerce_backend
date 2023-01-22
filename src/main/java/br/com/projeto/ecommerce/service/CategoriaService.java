@@ -1,6 +1,7 @@
 package br.com.projeto.ecommerce.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,6 +22,10 @@ public class CategoriaService {
 	
 	public List<CategoriaModel> readAll() {
 		return categoriaRepository.findAll();
+	}
+	
+	public Optional<CategoriaModel> findById(Integer id) {
+		return categoriaRepository.findById(id);
 	}
 	
 	public List<CategoriaModel> findByName(String name) {
