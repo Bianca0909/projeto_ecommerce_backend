@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import javax.validation.constraints.NotNull;
 
+import br.com.projeto.ecommerce.enums.EnumSituacao;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -30,5 +31,7 @@ public class MarcaModel implements Serializable{
 	@NotNull
 	private String name;
 	
-	
+	@Column
+	@NotNull
+	private EnumSituacao situacao;
 }

@@ -6,6 +6,7 @@ import java.time.LocalDate;
 
 import javax.validation.constraints.NotNull;
 
+import br.com.projeto.ecommerce.enums.EnumSituacao;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -51,6 +52,10 @@ public class ProdutoModel implements Serializable {
 	@NotNull(message = "O campo categoria não pode ser nulo")
 	@ManyToOne
 	private CategoriaModel categoria;
+	
+	@Column
+	@NotNull
+	private EnumSituacao situacao;
 	
 	@Column
 	private Integer quantidade;

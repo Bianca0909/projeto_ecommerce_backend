@@ -1,6 +1,7 @@
 package br.com.projeto.ecommerce.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -37,6 +38,11 @@ public class MarcaController {
 		return marcaService.findByName(name);
 	}
 
+	@GetMapping("{id}")
+	public Optional<MarcaModel> findById(@PathVariable Integer id) {
+		return marcaService.findById(id);
+	}
+	
 	@DeleteMapping("/{id}")
 	public String delete(@PathVariable Integer id) {
 		return marcaService.delete(id);
@@ -46,5 +52,15 @@ public class MarcaController {
 	public String update(@RequestBody MarcaModel marca, @PathVariable Integer id) {
 		marca.setId(id);
 		return marcaService.update(marca);
+	}
+	
+	@PutMapping("/inativar/{id}")
+	public String inactive(MarcaModel marca, @PathVariable Integer id) {
+		return marcaService.inactive(marca);
+	}
+	
+	@PutMapping("/ativar/{id}")
+	public String active(MarcaModel marca, @PathVariable Integer id) {
+		return marcaService.active(marca);
 	}
 }

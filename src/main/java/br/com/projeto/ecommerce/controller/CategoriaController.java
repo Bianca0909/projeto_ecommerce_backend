@@ -1,6 +1,7 @@
 package br.com.projeto.ecommerce.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -37,6 +38,11 @@ public class CategoriaController {
 		return categoriaService.findByName(name);
 	}
 	
+	@GetMapping("{id}")
+	public Optional<CategoriaModel> findById(@PathVariable Integer id) {
+		return categoriaService.findById(id);
+	}
+	
 	@DeleteMapping("/{id}")
 	public String delete(@PathVariable Integer id) {
 		return categoriaService.delete(id);
@@ -46,5 +52,15 @@ public class CategoriaController {
 	public String update(@RequestBody CategoriaModel categoria, @PathVariable Integer id) {
 		categoria.setId(id);
 		return categoriaService.update(categoria);
+	}
+	
+	@PutMapping("/inativar/{id}")
+	public String inactive(CategoriaModel categoria, @PathVariable Integer id) {
+		return categoriaService.inactive(categoria);
+	}
+	
+	@PutMapping("/ativar/{id}")
+	public String active(CategoriaModel categoria, @PathVariable Integer id) {
+		return categoriaService.active(categoria);
 	}
 }
