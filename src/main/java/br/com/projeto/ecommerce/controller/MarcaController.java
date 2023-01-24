@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.projeto.ecommerce.model.CategoriaModel;
 import br.com.projeto.ecommerce.model.MarcaModel;
 import br.com.projeto.ecommerce.service.MarcaService;
 
@@ -53,5 +52,15 @@ public class MarcaController {
 	public String update(@RequestBody MarcaModel marca, @PathVariable Integer id) {
 		marca.setId(id);
 		return marcaService.update(marca);
+	}
+	
+	@PutMapping("/inativar/{id}")
+	public String inactive(MarcaModel marca, @PathVariable Integer id) {
+		return marcaService.inactive(marca);
+	}
+	
+	@PutMapping("/ativar/{id}")
+	public String active(MarcaModel marca, @PathVariable Integer id) {
+		return marcaService.active(marca);
 	}
 }

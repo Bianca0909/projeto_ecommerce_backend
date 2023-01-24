@@ -53,4 +53,14 @@ public class CategoriaController {
 		categoria.setId(id);
 		return categoriaService.update(categoria);
 	}
+	
+	@PutMapping("/inativar/{id}")
+	public String inactive(CategoriaModel categoria, @PathVariable Integer id) {
+		return categoriaService.inactive(categoria);
+	}
+	
+	@PutMapping("/ativar/{id}")
+	public String active(CategoriaModel categoria, @PathVariable Integer id) {
+		return categoriaService.active(categoria);
+	}
 }
