@@ -45,9 +45,8 @@ public class CategoriaService {
 	}
 	
 	public String inactive(CategoriaModel categoria) {
-		 var categoriaEncontrada = categoriaRepository.findById(categoria.getId()).get();
-		 categoriaEncontrada.setSituacao(EnumSituacao.INATIVO);
-		 categoriaRepository.save(categoriaEncontrada);
+		 categoria.setSituacao(EnumSituacao.INATIVO);
+		 categoriaRepository.save(categoria);
 		 return "Categoria inativada com sucesso";
 	}
 	

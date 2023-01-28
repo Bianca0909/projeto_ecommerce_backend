@@ -45,9 +45,9 @@ public class MarcaService {
 	}
 	
 	public String inactive(MarcaModel marca) {
-		 var marcaEncontrada = marcaRepository.findById(marca.getId()).get();
-		 marcaEncontrada.setSituacao(EnumSituacao.INATIVO);
-		 marcaRepository.save(marcaEncontrada);
+		 marcaRepository.findById(marca.getId()).get();
+		 marca.setSituacao(EnumSituacao.INATIVO);
+		 marcaRepository.save(marca);
 		 return "Marca inativada com sucesso";
 	}
 	
