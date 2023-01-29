@@ -40,7 +40,7 @@ public class CategoriaServiceTest{
 	
 	@Test
 	@DisplayName("Testa para buscar categoria por nome")
-	public void testFindByName() {
+	public void testFindCategoriaByName() {
 		var categoria = createCategoria(1, "Categoria", EnumSituacao.ATIVO);
 		categoriaService.findByName(categoria.getName());
 		
@@ -49,7 +49,7 @@ public class CategoriaServiceTest{
 	
 	@Test
 	@DisplayName("Testa para buscar categoria por id")
-	public void testFindById() {
+	public void testFindCategoriaById() {
 		var categoria = createCategoria(1, "Categoria", EnumSituacao.ATIVO);
 		categoriaService.findById(categoria.getId());
 		

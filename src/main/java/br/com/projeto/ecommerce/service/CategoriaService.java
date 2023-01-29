@@ -33,11 +33,11 @@ public class CategoriaService {
 		return categoriaRepository.findByName(name);
 	}
 	
-	public String delete(Integer id) {
-		CategoriaModel categoria = categoriaRepository.findById(id).get();
-		categoriaRepository.delete(categoria);
-		return "Categoria excluída com sucesso";
-	}
+//	public String delete(Integer id) {
+//		CategoriaModel categoria = categoriaRepository.findById(id).get();
+//		categoriaRepository.delete(categoria);
+//		return "Categoria excluída com sucesso";
+//	}
 	
 	public String update(CategoriaModel categoria) {
 		 categoriaRepository.save(categoria);

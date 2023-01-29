@@ -41,11 +41,11 @@ public class ProdutoService {
 		return produtoRepository.findByFavorito();
 	}
 	
-	public String delete(Integer id) {
-		ProdutoModel produto = produtoRepository.findById(id).get();
-		produtoRepository.delete(produto);
-		return "Produto excluído com sucesso";
-	}
+//	public String delete(Integer id) {
+//		ProdutoModel produto = produtoRepository.findById(id).get();
+//		produtoRepository.delete(produto);
+//		return "Produto excluído com sucesso";
+//	}
 	
 	public String update(ProdutoModel produto) {
 		 produtoRepository.save(produto);

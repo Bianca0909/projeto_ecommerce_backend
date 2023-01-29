@@ -32,12 +32,12 @@ public class MarcaService {
 	public Optional<MarcaModel> findById(Integer id) {
 		return marcaRepository.findById(id);
 	}
-	
-	public String delete(Integer id) {
-		MarcaModel marca = marcaRepository.findById(id).get();
-		marcaRepository.delete(marca);
-		return "Marca excluída com sucesso";
-	}
+
+//	public String delete(Integer id) {
+//		MarcaModel marca = marcaRepository.findById(id).get();
+//		marcaRepository.delete(marca);
+//		return "Marca excluída com sucesso";
+//	}
 	
 	public String update(MarcaModel marca) {
 		 marcaRepository.save(marca);
