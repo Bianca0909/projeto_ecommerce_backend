@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,7 +24,7 @@ public class CategoriaController {
 	CategoriaService categoriaService;
 	
 	@PostMapping
-	public String create(@RequestBody CategoriaModel categoria) {
+	public CategoriaModel create(@RequestBody CategoriaModel categoria) {
 		return categoriaService.create(categoria);
 	}
 	
@@ -42,10 +43,10 @@ public class CategoriaController {
 		return categoriaService.findById(id);
 	}
 	
-//	@DeleteMapping("/{id}")
-//	public String delete(@PathVariable Integer id) {
-//		return categoriaService.delete(id);
-//	}
+	@DeleteMapping("/{id}")
+	public String delete(@PathVariable Integer id) {
+		return categoriaService.delete(id);
+	}
 	
 	@PutMapping("/{id}")
 	public String update(@RequestBody CategoriaModel categoria, @PathVariable Integer id) {
@@ -54,7 +55,7 @@ public class CategoriaController {
 	}
 	
 	@PutMapping("/inativar/{id}")
-	public String inactive(CategoriaModel categoria, @PathVariable Integer id) {
+	public CategoriaModel inactive(CategoriaModel categoria, @PathVariable Integer id) {
 		return categoriaService.inactive(categoria);
 	}
 	

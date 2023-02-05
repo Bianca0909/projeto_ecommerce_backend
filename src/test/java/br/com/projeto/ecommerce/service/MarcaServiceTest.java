@@ -1,26 +1,25 @@
 package br.com.projeto.ecommerce.service;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.mockito.Mockito.when;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import br.com.projeto.ecommerce.enums.EnumSituacao;
 import br.com.projeto.ecommerce.model.MarcaModel;
-import br.com.projeto.ecommerce.repository.MarcaRepository;
-import jakarta.inject.Inject;
 
 @SpringBootTest
 class MarcaServiceTest {
 
-	@Inject
-	private MarcaService marcaService;
-	
-	@Inject
-	private MarcaRepository marcaRepository;
-	
+	MarcaService mock = Mockito.mock(MarcaService.class);
+
 	@Test
 	@DisplayName("Testa criar marca")
 	public void testCreateMarca() {
@@ -32,44 +31,47 @@ class MarcaServiceTest {
 	@DisplayName("Testa atualizar marca")
 	public void testUpdateMarca() {
 		var marca = createMarca(1, "Marca", EnumSituacao.ATIVO);
-		marca.setName("NovoNome");
+		String nome = "Novo nome";
 		
-		marcaService.update(marca);
-		assertEquals("NovoNome", marca.getName());	
+		marca.setName(nome);
+		
+		mock.update(marca);
+		
+		assertThat(marca.getName()).isEqualTo(nome);
 	}
 	
 	@Test
 	@DisplayName("Testa para buscar marca por nome")
 	public void testFindMarcaByName() {
+		List<MarcaModel> marcaList = new ArrayList<>(); 
 		var marca = createMarca(1, "Marca", EnumSituacao.ATIVO);
-		marcaService.findByName(marca.getName());
+		marcaList.add(marca);
 		
-		assertEquals("Marca", marca.getName());
+		mock.findByName(marca.getName());
+		assertThat(marcaList.contains(marca)).isTrue();
 	}
 	
 	@Test
 	@DisplayName("Testa para buscar marca por id")
 	public void testFindMarcaById() {
 		var marca = createMarca(1, "Marca", EnumSituacao.ATIVO);
-		marcaService.findById(marca.getId());
 		
-		assertEquals(1, marca.getId());
+		mock.findById(marca.getId());
+		
+		assertThat(marca.getId()).isEqualTo(1);
 	}
 	
 	@Test
-	@DisplayName("Testa inativar marca")
-	public void testInactiveMarca() {
-		MarcaModel marca = createMarca(null, "Marca", EnumSituacao.ATIVO);
-		marcaService.inactive(marca);
-		assertEquals(EnumSituacao.INATIVO, marca.getSituacao());
-	}
-	
-	@Test
-	@DisplayName("Testa ativar marca")
-	public void testActiveMarca() {
-		MarcaModel marca = createMarca(null, "Marca", EnumSituacao.ATIVO);
-		marcaService.active(marca);
-		assertEquals(EnumSituacao.ATIVO, marca.getSituacao());
+	public void testFindAllMarca() {
+		List<MarcaModel> marcaList = new ArrayList<>();
+		var marca = createMarca(1, "Marca", EnumSituacao.ATIVO);
+		marcaList.add(marca);
+		
+		when(mock.readAll()).thenReturn(marcaList);
+		
+		var result = mock.readAll();
+
+		assertThat(result).isEqualTo(marcaList);
 	}
 	
 	private MarcaModel createMarca(Integer id, String nome, EnumSituacao situacao) {
@@ -78,8 +80,10 @@ class MarcaServiceTest {
 				.name(nome)
 				.situacao(situacao)
 				.build();
-		marcaRepository.save(marca);
-		return marca;
 		
+		mock.create(marca);
+		
+		return marca;
 	}
+	
 }

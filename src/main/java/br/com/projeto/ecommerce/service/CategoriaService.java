@@ -15,10 +15,10 @@ public class CategoriaService {
 	
 	@Autowired
 	private CategoriaRepository categoriaRepository;
-	
-	public String create(CategoriaModel categoria) {
+	 
+	public CategoriaModel create(CategoriaModel categoria) {
 		 categoriaRepository.save(categoria);
-		 return "Categoria cadastrada com sucesso";
+		 return categoria;
 	}
 	
 	public List<CategoriaModel> readAll() {
@@ -33,27 +33,28 @@ public class CategoriaService {
 		return categoriaRepository.findByName(name);
 	}
 	
-//	public String delete(Integer id) {
-//		CategoriaModel categoria = categoriaRepository.findById(id).get();
-//		categoriaRepository.delete(categoria);
-//		return "Categoria excluída com sucesso";
-//	}
+	public String delete(Integer id) {
+		CategoriaModel categoria = categoriaRepository.findById(id).get();
+		categoriaRepository.delete(categoria);
+		return "Categoria excluída com sucesso";
+	}
 	
 	public String update(CategoriaModel categoria) {
 		 categoriaRepository.save(categoria);
 		 return "Categoria atualizada com sucesso";
 	}
 	
-	public String inactive(CategoriaModel categoria) {
+	public CategoriaModel inactive(CategoriaModel categoria) {
+//		 var categoriaEncontrada = categoriaRepository.findById(categoria.getId()).get();
 		 categoria.setSituacao(EnumSituacao.INATIVO);
 		 categoriaRepository.save(categoria);
-		 return "Categoria inativada com sucesso";
+		 return categoria;
 	}
 	
 	public String active(CategoriaModel categoria) {
-		 var categoriaEncontrada = categoriaRepository.findById(categoria.getId()).get();
-		 categoriaEncontrada.setSituacao(EnumSituacao.ATIVO);
-		 categoriaRepository.save(categoriaEncontrada);
+//		 var categoriaEncontrada = categoriaRepository.findById(categoria.getId()).get();
+		 categoria.setSituacao(EnumSituacao.ATIVO);
+		 categoriaRepository.save(categoria);
 		 return "Categoria ativada com sucesso";
 	}
 }
