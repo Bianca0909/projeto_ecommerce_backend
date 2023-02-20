@@ -62,6 +62,7 @@ class MarcaServiceTest {
 	}
 	
 	@Test
+	@DisplayName("Testa para buscar todas as marcas")
 	public void testFindAllMarca() {
 		List<MarcaModel> marcaList = new ArrayList<>();
 		var marca = createMarca(1, "Marca", EnumSituacao.ATIVO);

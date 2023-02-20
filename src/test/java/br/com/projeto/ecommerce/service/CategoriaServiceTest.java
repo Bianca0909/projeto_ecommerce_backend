@@ -83,7 +83,6 @@ public class CategoriaServiceTest {
 				.situacao(situacao)
 				.build();
 		
-		CategoriaService mock = Mockito.mock(CategoriaService.class);
 		mock.create(categoria);
 		
 		return categoria;

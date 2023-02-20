@@ -45,14 +45,12 @@ public class CategoriaService {
 	}
 	
 	public CategoriaModel inactive(CategoriaModel categoria) {
-//		 var categoriaEncontrada = categoriaRepository.findById(categoria.getId()).get();
 		 categoria.setSituacao(EnumSituacao.INATIVO);
 		 categoriaRepository.save(categoria);
 		 return categoria;
 	}
 	
 	public String active(CategoriaModel categoria) {
-//		 var categoriaEncontrada = categoriaRepository.findById(categoria.getId()).get();
 		 categoria.setSituacao(EnumSituacao.ATIVO);
 		 categoriaRepository.save(categoria);
 		 return "Categoria ativada com sucesso";

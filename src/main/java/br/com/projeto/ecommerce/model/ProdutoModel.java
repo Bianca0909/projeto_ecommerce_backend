@@ -1,6 +1,5 @@
 package br.com.projeto.ecommerce.model;
 
-import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
@@ -16,15 +15,17 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
 @Data
+@Builder
 @Table(name = "produto")
 @NoArgsConstructor
 @AllArgsConstructor
-public class ProdutoModel implements Serializable {
+public class ProdutoModel {
 	
 	@Id
 	@Column
@@ -54,7 +55,7 @@ public class ProdutoModel implements Serializable {
 	private CategoriaModel categoria;
 	
 	@Column
-	@NotNull
+	@NotNull(message = "O campo situação não pode ser nulo")
 	private EnumSituacao situacao;
 	
 	@Column
