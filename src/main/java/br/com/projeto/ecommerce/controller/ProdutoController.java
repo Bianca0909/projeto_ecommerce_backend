@@ -51,25 +51,10 @@ public class ProdutoController {
 	public List<ProdutoModel> findByFavorito() {
 		return produtoService.findByFavorito();
 	}
-	
-//	@DeleteMapping("/{id}")
-//	public String delete(@PathVariable Integer id) {
-//		return produtoService.delete(id);
-//	}
 
 	@PutMapping("/{id}")
 	public String update(@RequestBody ProdutoModel produto, @PathVariable Integer id) {
 		produto.setId(id);
 		return produtoService.update(produto);
-	}
-	
-	@PutMapping("/inativar/{id}")
-	public String inactive(ProdutoModel produto, @PathVariable Integer id) {
-		return produtoService.inactive(produto);
-	}
-	
-	@PutMapping("/ativar/{id}")
-	public String active(ProdutoModel produto, @PathVariable Integer id) {
-		return produtoService.active(produto);
 	}
 }

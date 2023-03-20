@@ -24,7 +24,8 @@ public class MarcaController {
 
 	@PostMapping
 	public String create(@RequestBody MarcaModel marca) {
-		return marcaService.create(marca);
+		marcaService.create(marca);
+		return "Marca cadastrada com sucesso";
 	}
 
 	@GetMapping
@@ -41,11 +42,6 @@ public class MarcaController {
 	public Optional<MarcaModel> findById(@PathVariable Integer id) {
 		return marcaService.findById(id);
 	}
-	
-//	@DeleteMapping("/{id}")
-//	public String delete(@PathVariable Integer id) {
-//		return marcaService.delete(id);
-//	}
 
 	@PutMapping("/{id}")
 	public String update(@RequestBody MarcaModel marca, @PathVariable Integer id) {
@@ -53,13 +49,4 @@ public class MarcaController {
 		return marcaService.update(marca);
 	}
 	
-	@PutMapping("/inativar/{id}")
-	public String inactive(MarcaModel marca, @PathVariable Integer id) {
-		return marcaService.inactive(marca);
-	}
-	
-	@PutMapping("/ativar/{id}")
-	public String active(MarcaModel marca, @PathVariable Integer id) {
-		return marcaService.active(marca);
-	}
 }

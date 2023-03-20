@@ -6,7 +6,6 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.projeto.ecommerce.enums.EnumSituacao;
 import br.com.projeto.ecommerce.model.CategoriaModel;
 import br.com.projeto.ecommerce.repository.CategoriaRepository;
 
@@ -42,17 +41,5 @@ public class CategoriaService {
 	public String update(CategoriaModel categoria) {
 		 categoriaRepository.save(categoria);
 		 return "Categoria atualizada com sucesso";
-	}
-	
-	public CategoriaModel inactive(CategoriaModel categoria) {
-		 categoria.setSituacao(EnumSituacao.INATIVO);
-		 categoriaRepository.save(categoria);
-		 return categoria;
-	}
-	
-	public String active(CategoriaModel categoria) {
-		 categoria.setSituacao(EnumSituacao.ATIVO);
-		 categoriaRepository.save(categoria);
-		 return "Categoria ativada com sucesso";
 	}
 }
