@@ -27,7 +27,7 @@ public class CategoriaController {
 		return categoriaService.create(categoria);
 	}
 	
-	@GetMapping
+	@GetMapping("/")
 	public List<CategoriaModel> readAll() {
 		return categoriaService.readAll();
 	}
@@ -38,12 +38,12 @@ public class CategoriaController {
 	}
 	
 	@GetMapping("{id}")
-	public Optional<CategoriaModel> findById(@PathVariable Integer id) {
+	public Optional<CategoriaModel> findById(@PathVariable("id") Integer id) {
 		return categoriaService.findById(id);
 	}
 	
 	@PutMapping("/{id}")
-	public String update(@RequestBody CategoriaModel categoria, @PathVariable Integer id) {
+	public String update(@RequestBody CategoriaModel categoria, @PathVariable("id") Integer id) {
 		categoria.setId(id);
 		return categoriaService.update(categoria);
 	}

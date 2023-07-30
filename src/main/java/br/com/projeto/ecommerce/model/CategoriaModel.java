@@ -1,7 +1,5 @@
 package br.com.projeto.ecommerce.model;
 
-import java.io.Serializable;
-
 import javax.validation.constraints.NotNull;
 
 import br.com.projeto.ecommerce.enums.EnumSituacao;
@@ -22,7 +20,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class CategoriaModel implements Serializable{
+public class CategoriaModel {
 	
 	@Column
 	@Id

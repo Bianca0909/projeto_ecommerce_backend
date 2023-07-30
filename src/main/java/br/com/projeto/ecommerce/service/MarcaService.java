@@ -36,5 +36,4 @@ public class MarcaService {
 		 marcaRepository.save(marca);
 		 return "Marca atualizada com sucesso";
 	}
-
 }

@@ -20,7 +20,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class MarcaModel {
+public class MarcaModel{
 
 	@Column
 	@Id
