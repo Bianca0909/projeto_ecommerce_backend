@@ -38,6 +38,17 @@ public class UserModel implements UserDetails {
 	
 	@Column
 	@NotNull
+	private String cpfCnpj;
+	
+	@Column
+	@NotNull
+	private String email;
+	
+	@Column
+	private String telefone;
+	
+	@Column
+	@NotNull
 	private String login;
 	
 	@Column
@@ -48,8 +59,11 @@ public class UserModel implements UserDetails {
 	@NotNull
 	private UserRole role;
 
-	public UserModel(String login, String password, UserRole role) {
+	public UserModel(String login, String cpfCnpj, String email, String telefone, String password, UserRole role) {
 		this.login = login;
+		this.cpfCnpj = cpfCnpj;
+		this.email = email;
+		this.telefone = telefone;
 		this.password = password;
 		this.role = role;
 	}
