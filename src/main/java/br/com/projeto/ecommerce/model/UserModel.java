@@ -15,6 +15,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.PrimaryKeyJoinColumn;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -38,18 +39,19 @@ public class UserModel implements UserDetails {
 	
 	@Column
 	@NotNull
+	private String login;
+	
+	@Column
+	@NotNull
 	private String cpfCnpj;
 	
 	@Column
 	@NotNull
+	@PrimaryKeyJoinColumn
 	private String email;
 	
 	@Column
 	private String telefone;
-	
-	@Column
-	@NotNull
-	private String login;
 	
 	@Column
 	@NotNull
@@ -77,7 +79,7 @@ public class UserModel implements UserDetails {
 
 	@Override
 	public String getUsername() {
-		return login;
+		return email;
 	}
 
 	@Override
