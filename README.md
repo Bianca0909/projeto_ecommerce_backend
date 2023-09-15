@@ -7,8 +7,8 @@
 
 1. Clone o repositório e acesse a pasta do projeto
    ```shell
-   git clone git@github.com:Bianca0909/projeto_ecommerce_frontend.git
-   cd projeto_ecommerce_frontend
+   git clone git@github.com:Bianca0909/projeto_ecommerce_backend.git
+   cd projeto_ecommerce_backend
     ```
 2. Importe projeto Maven no editor de código de sua preferência
 3. Certifique-se se você tem o Lombok e Maven Apache instalado em sua IDE.
