@@ -1,35 +1,23 @@
-🇧🇷 Projeto RedShifty: E-commerce de eletrônicos
+ # 🇧🇷 Projeto RedShifty: E-commerce de eletrônicos
+![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white)
+![Apache Maven](https://img.shields.io/badge/Apache%20Maven-C71A36?style=for-the-badge&logo=Apache%20Maven&logoColor=white)
+![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
 
-    Explicando a estrutura do projeto:
-    Esse projeto consiste na construção de um site para e-commerce de eletrônicos baseado no padrão de projeto MVC (Model-View-Controller).
+## Como Executar
 
-    Para saber mais do padrão MVC:
-    https://www.youtube.com/watch?v=mMDt9g7bMjk
-    https://www.devmedia.com.br/introducao-ao-padrao-mvc/29308
+1. Clone o repositório e acesse a pasta do projeto
+   ```shell
+   git clone git@github.com:Bianca0909/projeto_ecommerce_frontend.git
+   cd projeto_ecommerce_frontend
+    ```
+2. Importe projeto Maven no editor de código de sua preferência
+3. Certifique-se se você tem o Lombok e Maven Apache instalado em sua IDE.
 
-    Tecnologias utilizadas:
+### FRONT-END
 
-    - Spring boot: https://spring.io/projects/spring-boot
-    - Maven Apache: https://maven.apache.org/
-    - Lombok: https://www.baeldung.com/intro-to-project-lombok | https://projectlombok.org/download
-    - MySQL (database): https://www.mysql.com/
-    - Angular: https://angular.io/
-    - Typescript: https://www.typescriptlang.org/
- 
-🇺🇸 RedShifty Project: Tech's e-commerce
-    
-    About the project structure:
-        This project consists on build a website for technology e-commerce based on MVC (Model-View-Controller) pattern.
-        
-     More about MVC pattern:
-     https://dotnet.microsoft.com/en-us/apps/aspnet/mvc
-     
-     
-    Tecnologys used on this project:
-   
-    - Spring boot: https://spring.io/projects/spring-boot
-    - Maven Apache: https://maven.apache.org/
-    - Lombok: https://www.baeldung.com/intro-to-project-lombok | https://projectlombok.org/download
-    - MySQL (database): https://www.mysql.com/
-    - Angular: https://angular.io/
-    - Typescript: https://www.typescriptlang.org/
+Você pode executar o frontend para se comunicar com esta aplicação através de requisições HTTP. Para isso, siga as instruções abaixo:
+1. Clone esse [repositório](https://github.com/Bianca0909/projeto_ecommerce_frontend)
+```
+git clone git@github.com:Bianca0909/projeto_ecommerce_frontend.git
+```
+2. Siga as instruções fornecidas no repositório do frontend para configurar e executar o projeto.
