@@ -18,6 +18,7 @@ import br.com.projeto.ecommerce.dto.RegisterDTO;
 import br.com.projeto.ecommerce.infra.security.TokenService;
 import br.com.projeto.ecommerce.model.UserModel;
 import br.com.projeto.ecommerce.repository.UserRepository;
+import br.com.projeto.ecommerce.utils.Utils;
 
 @RestController
 @RequestMapping("auth")
@@ -31,6 +32,9 @@ public class AuthenticationController {
 	
 	@Autowired
 	private TokenService tokenService;
+	
+	@Autowired
+	private Utils utils;
 	
 	@PostMapping("/login")
 	public ResponseEntity login(@RequestBody @Valid AuthenticationDTO data) {
@@ -46,9 +50,12 @@ public class AuthenticationController {
 	public ResponseEntity register(@RequestBody @Valid RegisterDTO data) {
 		if (this.userRepository.findByEmail(data.email()) != null) 
 			return ResponseEntity.badRequest().build();
-	
+		
+		String cpfCnpj = utils.formatCpfCnpj(data.cpfCnpj(), data.role());
+		String telefone = utils.formatTelefone(data.telefone());
+		
 		String encryptPassword = new BCryptPasswordEncoder().encode(data.password());
-		UserModel newUser = new UserModel(data.login(), data.cpfCnpj(), data.email(), data.telefone(), encryptPassword, data.role());
+		UserModel newUser = new UserModel(data.login(), cpfCnpj, data.email(), telefone, encryptPassword, data.role());
 		
 		this.userRepository.save(newUser);
 		
